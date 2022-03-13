@@ -1,6 +1,6 @@
 package fr.utbm.ro54.tp2;
 
-import generic_tools.Position;
+import fr.utbm.ro54.generic_tools.Position;
 
 public class Cell implements Comparable{
 	private FingerPrint fp;

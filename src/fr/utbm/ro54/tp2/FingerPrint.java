@@ -2,7 +2,7 @@ package fr.utbm.ro54.tp2;
 
 import java.util.ArrayList;
 
-import generic_tools.Position;
+import fr.utbm.ro54.generic_tools.Position;
 
 public class FingerPrint {
 	private ArrayList<Double> signals;

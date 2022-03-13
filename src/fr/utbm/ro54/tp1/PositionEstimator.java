@@ -2,7 +2,7 @@ package fr.utbm.ro54.tp1;
 
 import java.util.ArrayList;
 
-import generic_tools.Position;
+import fr.utbm.ro54.generic_tools.Position;
 
 public class PositionEstimator {
 	double precision;

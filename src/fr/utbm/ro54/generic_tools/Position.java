@@ -1,4 +1,4 @@
-package generic_tools;
+package fr.utbm.ro54.generic_tools;
 
 import java.util.ArrayList;
 

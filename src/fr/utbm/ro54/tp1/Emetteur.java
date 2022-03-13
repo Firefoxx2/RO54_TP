@@ -1,5 +1,5 @@
 package fr.utbm.ro54.tp1;
-import generic_tools.Position;
+import fr.utbm.ro54.generic_tools.Position;
 
 public class Emetteur {
 	private Position _centerPosition;
