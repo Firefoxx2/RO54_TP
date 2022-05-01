@@ -4,6 +4,7 @@ import fr.utbm.ro54.generic_tools.Position;
 
 public class MainActivity {
 	public static void main(String[] Argv) {
+		///**
 		FingerPrint FPtoLocate = new FingerPrint(-26, -42, -13, -46);
 		
 		PositionEstimator PE = new PositionEstimator();
@@ -16,6 +17,14 @@ public class MainActivity {
 		PE.AddCell(new FingerPrint(-17, -50, -44, -33), new Position(10, 3));
 		PE.AddCell(new FingerPrint(-27, -28, -32, -45), new Position(10, 6));
 		PE.AddCell(new FingerPrint(-30, -20, -60, -40), new Position(10, 10));
+		//**/
+		/**
+		FingerPrint FPtoLocate = new FingerPrint(-1, 1);
+		
+		PositionEstimator PE = new PositionEstimator();
+		PE.AddCell(new FingerPrint(-1, 0), new Position(10, 10));
+		PE.AddCell(new FingerPrint(0, 1), new Position(0, 0));
+		//**/
 		
 		System.out.println(PE.run(4, FPtoLocate));
 	}
