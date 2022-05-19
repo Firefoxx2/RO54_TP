@@ -1,4 +1,4 @@
-package fr.utbm.ro54.tp2;
+package tp2;
 
 import java.util.ArrayList;
 
@@ -20,17 +20,17 @@ public class FingerPrint {
 		return _signals.size();
 	}
 	
-	public double evaluateDistance(FingerPrint fp) {
+	public double calculateMetric(FingerPrint fp) {
 		if (this.getSize() != fp.getSize())
 			throw new IllegalArgumentException("bad dim");
 		
 		double sum = 0;
 		
 		for (int i = 0; i<this.getSize(); i++) {
-			sum += Math.pow(fp._signals.get(i) - this._signals.get(i), 2);
+			sum += Math.abs(fp._signals.get(i) - this._signals.get(i));
 		}
 		
-		return Math.sqrt(sum);
+		return sum;
 	}
 
 	@Override

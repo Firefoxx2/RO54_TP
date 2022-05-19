@@ -1,13 +1,8 @@
-package fr.utbm.ro54.tp2;
+package tp2;
 
-import fr.utbm.ro54.generic_tools.Position;
+import generic_tools.Position;
 
 public class Cell implements Comparable<Cell>{
-	@Override
-	public String toString() {
-		return "Cell [_fingerPrint=" + _fingerPrint + ", _position=" + _position + ", _metric=" + _metric + "]";
-	}
-
 	private FingerPrint _fingerPrint;
 	private Position _position;
 	private double _metric;
@@ -15,30 +10,7 @@ public class Cell implements Comparable<Cell>{
 	public Cell(FingerPrint fp, Position position, FingerPrint fpToCompare) {
 		this._fingerPrint = fp;
 		this._position = position;
-		_metric = fpToCompare.evaluateDistance(this._fingerPrint);
-	}
-
-	public enum Mode {
-		NN,
-		KNN, 
-		WEIGHTEDKNN
-	}
-
-	public double getNeighborWeight(Mode mode, int K) {
-		switch (mode) {
-		case NN:
-			return 1;
-		case KNN:
-			return 1/K;
-		case WEIGHTEDKNN:
-			if (this._metric == 0) {
-				return Double.MAX_VALUE;
-			} else {
-				return 1/Math.abs(this._metric);
-			}
-		default:
-			throw new IllegalArgumentException("bad argv");
-		}
+		_metric = fpToCompare.calculateMetric(this._fingerPrint);
 	}
 	
 	public double getMetric() {
@@ -48,8 +20,7 @@ public class Cell implements Comparable<Cell>{
 	public Position getPosition() {
 		return this._position;
 	}
-
-	@Override
+	@Override
 	public int compareTo(Cell o) {
 		if (o._metric == this._metric)
 			return 0;
@@ -59,5 +30,9 @@ public class Cell implements Comparable<Cell>{
 			return -1;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Cell [_fingerPrint=" + _fingerPrint + ", _position=" + _position + ", _metric=" + _metric + "]";
+	}
+
 }
