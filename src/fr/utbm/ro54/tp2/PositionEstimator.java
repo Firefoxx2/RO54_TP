@@ -1,8 +1,8 @@
-package tp2;
+package fr.utbm.ro54.tp2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import generic_tools.Position;
+import fr.utbm.ro54.generic_tools.Position;
 
 
 public class PositionEstimator {

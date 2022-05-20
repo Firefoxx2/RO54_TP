@@ -1,5 +1,4 @@
-package tp2;
-
+package fr.utbm.ro54.tp2;
 import java.util.ArrayList;
 
 public class FingerPrint {
